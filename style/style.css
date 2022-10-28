@@ -34,12 +34,14 @@ h2{
 }
 
 #sign-up{
+    display: block;
     width: 50%;
     text-transform: uppercase;
     font-size: 20px;
     color: #F7CA18;
     background-color: rgba(90,90,90,0.5);
     transition: .5s;
+
 
 }
 #sign-up:hover {
@@ -117,4 +119,8 @@ h2{
 .sign-up-btn:hover {
     background-color: yellow;
     color: black;
+}
+
+.log-in{
+    display: none;
 }
