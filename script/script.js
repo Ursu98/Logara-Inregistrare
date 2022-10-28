@@ -5,6 +5,9 @@ const btnSignUpForm = document.querySelector('#sign-up');
 const btnLogInForm = document.querySelector('#login');
 const formSignUp = document.querySelector('.sign-up')
 const formLogin = document.querySelector('.log-in')
+const firstName = document.querySelector(`.nameUser`)
+const lastName = document.querySelector(`.surnameUser`)
+const pass = document.querySelector('#password')
 let users = [];
 
 btnSignUpForm.addEventListener('click',()=>{
@@ -18,14 +21,32 @@ btnLogInForm.addEventListener('click',()=>{
 
 
 btn_sign_up.addEventListener("click", () => {
-   const numberField = numberValidation();
+    const numberField = numberValidation();
     const emailField = emailValidation();
-
+    const get_name = firstName.value
+    const get_surname = lastName.value
+    const get_mail = email.value
+    const get_pass = pass.value
+    const get_phone = phone_number.value
     if(numberField === true && emailField === true){
+        users.push({
+            name: get_name,
+            surname: get_surname,
+            email: get_mail,
+            password: get_pass
+        })
         alert("Congratulation!")
+        console.log(users)
+        firstName.value = "";
+        lastName.value = "";
+        email.value = "";
+        pass.value = "";
+        phone_number.value = "";
+        console.log(users)
     }
 
 });
+console.log(users)
 
 const emailValidation = () => {
     if (users.includes(email.value)) {
