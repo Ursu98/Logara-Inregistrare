@@ -1,7 +1,19 @@
 const email = document.getElementById("email");
 const btn_sign_up = document.querySelector("#btn-sign-up");
 const phone_number = document.querySelector('#phone');
+const btnSignUpForm = document.querySelector('#sign-up');
+const btnLogInForm = document.querySelector('#login');
+const formSignUp = document.querySelector('.sign-up')
+const formLogin = document.querySelector('.log-in')
 
+btnSignUpForm.addEventListener('click',()=>{
+ formSignUp.style.display = "block";
+ formLogin.style.display = "none";
+})
+btnLogInForm.addEventListener('click',()=>{
+ formSignUp.style.display = "none";
+ formLogin.style.display = "block";
+})
 
 let users = [];
 btn_sign_up.addEventListener("click", () => {
