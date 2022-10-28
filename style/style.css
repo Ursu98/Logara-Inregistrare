@@ -51,6 +51,7 @@ h2{
 
 
 #login{
+    display: block;
     width: 50%;
     text-transform: uppercase;
     font-size: 20px;
@@ -67,10 +68,10 @@ h2{
     display: flex;
     align-items: flex-end;
 }
-.btn-top:focus, .btn-top:active, .btn-top.active, .btn-top:active:focus {
-    outline: 0;
-    border-radius: 0
-}
+/*.btn-top:focus, .btn-top:active, .btn-top.active, .btn-top:active:focus {*/
+/*    outline: 0;*/
+/*    border-radius: 0*/
+/*}*/
 
 .first-name {
     display: flex;
@@ -91,16 +92,16 @@ h2{
     padding: 5px;
     margin-top: 25px;
     border: 1px solid white;
-    color: white;
+    color: black;
 }
 
 
 #btn-sign-up{
-    margin-top: 75px;
+    margin-top: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 98%;
     height: 10%;
 }
 
@@ -123,7 +124,7 @@ h2{
 
 .btn-log-in{
    margin-top: 45px;
-    width: 100%;
+    width: 98%;
     padding: 10px;
     text-transform: uppercase;
     font-size: 20px;
