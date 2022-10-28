@@ -8,8 +8,11 @@ const formLogin = document.querySelector('.log-in')
 const firstName = document.querySelector(`.nameUser`)
 const lastName = document.querySelector(`.surnameUser`)
 const pass = document.querySelector('#password')
+const verifyAccount = document.querySelector('.submit')
+const verifyLogUser = document.querySelector('.verify_email')
+const verifyLogPass = document.querySelector('.verify_password')
 let users = [];
-
+//change from one form to another
 btnSignUpForm.addEventListener('click',()=>{
     formSignUp.style.display = "block";
     formLogin.style.display = "none";
@@ -19,7 +22,7 @@ btnLogInForm.addEventListener('click',()=>{
     formLogin.style.display = "block";
 })
 
-
+//Click sign up -create user or reject if conditions are not respected
 btn_sign_up.addEventListener("click", () => {
     const numberField = numberValidation();
     const emailField = emailValidation();
@@ -48,13 +51,45 @@ btn_sign_up.addEventListener("click", () => {
 });
 console.log(users)
 
+//Log in account ,verrify existing account
+verifyAccount.addEventListener("click", (e) => {
+    for (let i = 0; i < users.length; i++) {
+        const emailVerify = verifyLogUser.value
+        const passVerify = verifyLogPass.value
+        if (
+            emailVerify === users[i].email &&
+            passVerify === users[i].password
+        ) {
+            verifyLogUser.style.borderColor ="black"
+            verifyLogPass.style.borderColor ="black"
+            alert("Welcome Back!");
+            verifyLogUser.value = ""
+            verifyLogPass.value = ""
+        }else {
+            verifyLogUser.style.borderColor ="red"
+            verifyLogPass.style.borderColor ="red"
+            verifyLogUser.value = ""
+            verifyLogPass.value = ""
+            formSignUp.style.display = "block";
+            formLogin.style.display = "none";
+
+        }
+    }
+    if(users.length === 0){
+        verifyLogUser.style.borderColor ="red"
+        verifyLogPass.style.borderColor ="red"
+        verifyLogUser.value = ""
+        verifyLogPass.value = ""
+    }
+});
+//email validation function
 const emailValidation = () => {
     if (users.includes(email.value)) {
         alert("Already Registered!!!");
         return false
     }else return true;
 }
-
+//number validation function
 const numberValidation = () => {
     const number = phone_number.value;
 
