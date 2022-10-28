@@ -83,7 +83,7 @@ const passwordValidation = () => {
         alert("Error:Password must contain at least one lowercase letter");
         return false;
     } else if (password.search(/[A-Z]/) < 0) {
-        alert("Error:Password must contain at least one lowercase letter");
+        alert("Error:Password must contain at least one upercase letter");
         return false;
     } else if (password.search(/[0-9]/) < 0) {
         alert("Error: Password must contain at least one number");
