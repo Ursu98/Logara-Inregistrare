@@ -53,7 +53,6 @@ console.log(users)
 
 //Log in account ,verrify existing account
 verifyAccount.addEventListener("click", (e) => {
-    e.preventDefault();
     for (let i = 0; i < users.length; i++) {
         const emailVerify = verifyLogUser.value
         const passVerify = verifyLogPass.value
@@ -71,6 +70,9 @@ verifyAccount.addEventListener("click", (e) => {
             verifyLogPass.style.borderColor ="red"
             verifyLogUser.value = ""
             verifyLogPass.value = ""
+            formSignUp.style.display = "block";
+            formLogin.style.display = "none";
+
         }
     }
     if(users.length === 0){
