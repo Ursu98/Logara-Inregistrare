@@ -46,10 +46,7 @@ h2{
     background-color: yellow;
     color: black;
 }
-.title {
-    display: flex;
-    justify-content: start;
-}
+
 
 #login{
     width: 50%;
