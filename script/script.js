@@ -5,6 +5,7 @@ const btnSignUpForm = document.querySelector('#sign-up');
 const btnLogInForm = document.querySelector('#login');
 const formSignUp = document.querySelector('.sign-up')
 const formLogin = document.querySelector('.log-in')
+let users = [];
 
 btnSignUpForm.addEventListener('click',()=>{
     formSignUp.style.display = "block";
@@ -15,23 +16,23 @@ btnLogInForm.addEventListener('click',()=>{
     formLogin.style.display = "block";
 })
 
-let users = [];
+
 btn_sign_up.addEventListener("click", () => {
-    numberValidation()
-    console.log("cliked")
+   const numberField = numberValidation();
+    const emailField = emailValidation();
+
+    if(numberField === true && emailField === true){
+        alert("Congratulation!")
+    }
+
+});
+
+const emailValidation = () => {
     if (users.includes(email.value)) {
         alert("Already Registered!!!");
-    } else if (
-        email.value.includes("@gmail.com") ||
-        email.value.match("@yahoo.com") ||
-        email.value.match("@icloud.com")
-    ) {
-        users.push(email.value);
-        alert("Congratulations!")}
-    // } else {
-    //   alert("Not Enough Rights to Register here");
-    // }
-});
+        return false
+    }else return true;
+}
 
 const numberValidation = () => {
     const number = phone_number.value;
@@ -42,7 +43,7 @@ const numberValidation = () => {
     {
         phone_number.style.borderColor = "red"
         phone_number.style.color = "red"
-        phone_number.value = "Invalid number!"
+        phone_number.value = "+373"
         return false;
     }
     else
