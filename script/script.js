@@ -24,30 +24,33 @@ btnLogInForm.addEventListener("click", () => {
 
 //Click sign up -create user or reject if conditions are not respected
 btn_sign_up.addEventListener("click", () => {
-  const numberField = numberValidation();
-  const emailField = emailValidation();
-  const passField = passwordValidation();
-  const get_name = firstName.value;
-  const get_surname = lastName.value;
-  const get_mail = email.value;
-  const get_pass = pass.value;
-  const get_phone = phone_number.value;
-  if (numberField === true && emailField === true && passField === true) {
-    users.push({
-      name: get_name,
-      surname: get_surname,
-      email: get_mail,
-      password: get_pass,
-    });
-    alert("Congratulation!");
-    console.log(users);
-    firstName.value = "";
-    lastName.value = "";
-    email.value = "";
-    pass.value = "";
-    phone_number.value = "";
-    console.log(users);
-  }
+
+    const numberField = numberValidation();
+    const fullnameField = fullnameValidation();
+    const emailField = emailValidation();
+    const passField = passwordValidation();
+    const get_name = firstName.value
+    const get_surname = lastName.value
+    const get_mail = email.value
+    const get_pass = pass.value
+    const get_phone = phone_number.value
+
+    if(numberField === true && emailField === true && fullnameField === true && passField === true){
+        users.push({
+            name: get_name,
+            surname: get_surname,
+            email: get_mail,
+            password: get_pass
+        })
+        alert("Congratulation!")
+        console.log(users)
+        firstName.value = "";
+        lastName.value = "";
+        email.value = "";
+        pass.value = "";
+        phone_number.value = "";
+        console.log(users)
+    }
 });
 console.log(users);
 
@@ -80,6 +83,7 @@ verifyAccount.addEventListener("click", (e) => {
 });
 //email validation function
 const emailValidation = () => {
+
   if (
     email.value.match("@gmail.com") ||
     email.value.match("@yahoo.com") ||
@@ -90,9 +94,11 @@ const emailValidation = () => {
     alert("invalid domain");
   }
 };
+
 //number validation function
 const numberValidation = () => {
   const number = phone_number.value;
+
 
   if (
     number === "" ||
@@ -128,3 +134,57 @@ const passwordValidation = () => {
   }
   return true;
 };
+
+    if(number === "" || number.length !== 12
+        || /[a-zA-Z]/.test(number) || number.startsWith('+373') === false
+        || number.charCodeAt(4) < 54 || number.charCodeAt(4) > 55 )
+    {
+        phone_number.style.borderColor = "red"
+        phone_number.value = "+373"
+        return false;
+    }
+    else
+    {
+        phone_number.style.color = "black";
+        return true
+    }
+}
+
+
+//Function for name input
+const fullnameValidation = () => {
+    const name = firstName.value;
+    const surname = lastName.value;
+    if( name === ""){
+        firstName.style.borderColor = "red"
+        lastName.style.borderColor = "black"
+        return false
+    }else if(surname === ""){
+        lastName.style.borderColor = "red"
+        firstName.style.borderColor = "black"
+        return false
+    }else {
+        firstName.style.borderColor = "black"
+        lastName.style.borderColor = "black"
+        return true
+    }
+}
+
+const passwordValidation = () => {
+    const password = pass.value;
+    if (password.length < 8) {
+        alert("Error: Password must be at least 8 characters");
+        return false;
+    } else if (password.search(/[a-z]/) < 0) {
+        alert("Error:Password must contain at least one lowercase letter");
+        return false;
+    } else if (password.search(/[A-Z]/) < 0) {
+        alert("Error:Password must contain at least one upercase letter");
+        return false;
+    } else if (password.search(/[0-9]/) < 0) {
+        alert("Error: Password must contain at least one number");
+        return false;
+    }
+    return true;
+}
+
