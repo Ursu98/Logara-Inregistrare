@@ -25,13 +25,14 @@ btnLogInForm.addEventListener('click',()=>{
 //Click sign up -create user or reject if conditions are not respected
 btn_sign_up.addEventListener("click", () => {
     const numberField = numberValidation();
+    const fullnameField = fullnameValidation();
     const emailField = emailValidation();
     const get_name = firstName.value
     const get_surname = lastName.value
     const get_mail = email.value
     const get_pass = pass.value
     const get_phone = phone_number.value
-    if(numberField === true && emailField === true){
+    if(numberField === true && emailField === true && fullnameField === true){
         users.push({
             name: get_name,
             surname: get_surname,
@@ -84,6 +85,7 @@ verifyAccount.addEventListener("click", (e) => {
 });
 //email validation function
 const emailValidation = () => {
+
     if (users.includes(email.value)) {
         alert("Already Registered!!!");
         return false
@@ -98,7 +100,6 @@ const numberValidation = () => {
         || number.charCodeAt(4) < 54 || number.charCodeAt(4) > 55 )
     {
         phone_number.style.borderColor = "red"
-        phone_number.style.color = "red"
         phone_number.value = "+373"
         return false;
     }
@@ -109,3 +110,21 @@ const numberValidation = () => {
     }
 }
 
+//Function for name input
+const fullnameValidation = () => {
+    const name = firstName.value;
+    const surname = lastName.value;
+    if( name === ""){
+        firstName.style.borderColor = "red"
+        lastName.style.borderColor = "black"
+        return false
+    }else if(surname === ""){
+        lastName.style.borderColor = "red"
+        firstName.style.borderColor = "black"
+        return false
+    }else {
+        firstName.style.borderColor = "black"
+        lastName.style.borderColor = "black"
+        return true
+    }
+}
