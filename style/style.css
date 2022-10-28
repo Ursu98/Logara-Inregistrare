@@ -1,0 +1,123 @@
+body{
+    position: relative;
+    background: #1c1e21 url(https://static.pexels.com/photos/8819/warsaw.jpg);
+}
+
+.form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin:auto;
+    margin-top: 50px;
+    /*border: 1px solid black;*/
+    padding: 1rem;
+    height: 400px;
+    background: rgba(0,0,0,0.8);
+    box-shadow: inset -5px -5px rgba(0,0,0,0.5);
+
+
+}
+h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+.btn-top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+}
+
+#sign-up{
+    width: 50%;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #F7CA18;
+    background-color: rgba(90,90,90,0.5);
+    transition: .5s;
+
+}
+#sign-up:hover {
+    background-color: yellow;
+    color: black;
+}
+.title {
+    display: flex;
+    justify-content: start;
+}
+
+#login{
+    width: 50%;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #F7CA18;
+    background-color: rgba(90,90,90,0.5);
+    transition: .5s;
+}
+
+#login:hover{
+    background-color: yellow;
+    color: black;
+}
+#btn-sign-up{
+    display: flex;
+    align-items: flex-end;
+}
+.btn-top:focus, .btn-top:active, .btn-top.active, .btn-top:active:focus {
+    outline: 0;
+    border-radius: 0
+}
+
+.first-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    width: 50%;
+    padding: 5px;
+    margin: 5px 5px;
+    border: 1px solid white;
+    background-color: gray;
+}
+
+.second-input {
+    width: 95%;
+    padding: 5px;
+    margin-top: 25px;
+    border: 1px solid white;
+    background-color: gray;
+    color: white;
+}
+
+
+#btn-sign-up{
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.sign-up-btn{
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #F7CA18;
+    background-color: transparent;
+    border: 1px solid yellow;
+    transition: .5s;
+
+}
+
+.sign-up-btn:hover {
+    background-color: yellow;
+    color: black;
+}
