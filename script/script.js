@@ -13,11 +13,11 @@ const verifyLogUser = document.querySelector('.verify_email')
 const verifyLogPass = document.querySelector('.verify_password')
 let users = [];
 //change from one form to another
-btnSignUpForm.addEventListener('click',()=>{
+btnSignUpForm.addEventListener('click', () => {
     formSignUp.style.display = "block";
     formLogin.style.display = "none";
 })
-btnLogInForm.addEventListener('click',()=>{
+btnLogInForm.addEventListener('click', () => {
     formSignUp.style.display = "none";
     formLogin.style.display = "block";
 })
@@ -34,7 +34,7 @@ btn_sign_up.addEventListener("click", () => {
     const get_pass = pass.value
     const get_phone = phone_number.value
 
-    if(numberField === true && emailField === true && fullnameField === true && passField === true){
+    if (numberField === true && emailField === true && fullnameField === true && passField === true) {
         users.push({
             name: get_name,
             surname: get_surname,
@@ -63,14 +63,14 @@ verifyAccount.addEventListener("click", (e) => {
             emailVerify === users[i].email &&
             passVerify === users[i].password
         ) {
-            verifyLogUser.style.borderColor ="black"
-            verifyLogPass.style.borderColor ="black"
+            verifyLogUser.style.borderColor = "black"
+            verifyLogPass.style.borderColor = "black"
             alert("Welcome Back!");
             verifyLogUser.value = ""
             verifyLogPass.value = ""
-        }else {
-            verifyLogUser.style.borderColor ="red"
-            verifyLogPass.style.borderColor ="red"
+        } else {
+            verifyLogUser.style.borderColor = "red"
+            verifyLogPass.style.borderColor = "red"
             verifyLogUser.value = ""
             verifyLogPass.value = ""
             formSignUp.style.display = "block";
@@ -78,35 +78,36 @@ verifyAccount.addEventListener("click", (e) => {
 
         }
     }
-    if(users.length === 0){
-        verifyLogUser.style.borderColor ="red"
-        verifyLogPass.style.borderColor ="red"
+    if (users.length === 0) {
+        verifyLogUser.style.borderColor = "red"
+        verifyLogPass.style.borderColor = "red"
         verifyLogUser.value = ""
         verifyLogPass.value = ""
     }
 });
 //email validation function
 const emailValidation = () => {
-
-    if (users.includes(email.value)) {
-        alert("Already Registered!!!");
-        return false
-    }else return true;
-}
+    if (
+        email.value.match("@gmail.com") ||
+        email.value.match("@yahoo.com") ||
+        email.value.match("@icloud.com")
+    ) {
+        return true;
+    } else {
+        alert("Invalid domain");
+    }
+};
 //number validation function
 const numberValidation = () => {
     const number = phone_number.value;
 
-    if(number === "" || number.length !== 12
+    if (number === "" || number.length !== 12
         || /[a-zA-Z]/.test(number) || number.startsWith('+373') === false
-        || number.charCodeAt(4) < 54 || number.charCodeAt(4) > 55 )
-    {
+        || number.charCodeAt(4) < 54 || number.charCodeAt(4) > 55) {
         phone_number.style.borderColor = "red"
         phone_number.value = "+373"
         return false;
-    }
-    else
-    {
+    } else {
         phone_number.style.color = "black";
         return true
     }
@@ -117,15 +118,15 @@ const numberValidation = () => {
 const fullnameValidation = () => {
     const name = firstName.value;
     const surname = lastName.value;
-    if( name === ""){
+    if (name === "") {
         firstName.style.borderColor = "red"
         lastName.style.borderColor = "black"
         return false
-    }else if(surname === ""){
+    } else if (surname === "") {
         lastName.style.borderColor = "red"
         firstName.style.borderColor = "black"
         return false
-    }else {
+    } else {
         firstName.style.borderColor = "black"
         lastName.style.borderColor = "black"
         return true
