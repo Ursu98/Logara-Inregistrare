@@ -1,6 +1,7 @@
 body{
     position: relative;
-    background: #1c1e21 url(https://static.pexels.com/photos/8819/warsaw.jpg);
+    background: #1c1e21 url(https://images.wallpaperscraft.ru/image/single/derevyannyj_poverkhnost_tekstura_doski_118443_1280x720.jpg);
+    background-size: cover;
 }
 
 .form{
