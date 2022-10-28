@@ -46,6 +46,7 @@ h2{
 #sign-up:hover {
     background-color: yellow;
     color: black;
+    cursor: pointer;
 }
 
 
@@ -61,6 +62,7 @@ h2{
 #login:hover{
     background-color: yellow;
     color: black;
+    cursor: pointer;
 }
 #btn-sign-up{
     display: flex;
@@ -118,6 +120,7 @@ h2{
 .sign-up-btn:hover {
     background-color: yellow;
     color: black;
+    cursor: pointer;
 }
 
 .btn-log-in{
@@ -135,6 +138,7 @@ h2{
 .btn-log-in:hover {
     background-color: yellow;
     color: black;
+    cursor: pointer;
 }
 
 .sign-up {
