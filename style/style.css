@@ -34,7 +34,6 @@ h2{
 }
 
 #sign-up{
-    display: block;
     width: 50%;
     text-transform: uppercase;
     font-size: 20px;
@@ -51,7 +50,6 @@ h2{
 
 
 #login{
-    display: block;
     width: 50%;
     text-transform: uppercase;
     font-size: 20px;
@@ -137,4 +135,14 @@ h2{
 .btn-log-in:hover {
     background-color: yellow;
     color: black;
+}
+
+.sign-up {
+    display: block;
+}
+
+.log-in {
+    display: none;
+    width: 100%;
+    height: 100px;
 }
