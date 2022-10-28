@@ -91,7 +91,6 @@ h2{
     padding: 5px;
     margin-top: 25px;
     border: 1px solid white;
-    background-color: gray;
     color: white;
 }
 
@@ -107,7 +106,7 @@ h2{
 
 .sign-up-btn{
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     text-transform: uppercase;
     font-size: 20px;
     color: #F7CA18;
@@ -122,6 +121,19 @@ h2{
     color: black;
 }
 
-.log-in{
-    display: none;
+.btn-log-in{
+   margin-top: 45px;
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #F7CA18;
+    background-color: transparent;
+    border: 1px solid yellow;
+    transition: .5s;
+}
+
+.btn-log-in:hover {
+    background-color: yellow;
+    color: black;
 }
