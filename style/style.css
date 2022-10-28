@@ -11,13 +11,17 @@ body{
     max-width: 400px;
     margin:auto;
     margin-top: 50px;
-    /*border: 1px solid black;*/
     padding: 1rem;
-    height: 400px;
+    height: 100%;
     background: rgba(0,0,0,0.8);
     box-shadow: inset -5px -5px rgba(0,0,0,0.5);
 
 
+}
+
+.form .log-in {
+    width: 400px;
+    height: 250px;
 }
 h2{
     display: flex;
@@ -68,10 +72,7 @@ h2{
     display: flex;
     align-items: flex-end;
 }
-/*.btn-top:focus, .btn-top:active, .btn-top.active, .btn-top:active:focus {*/
-/*    outline: 0;*/
-/*    border-radius: 0*/
-/*}*/
+
 
 .first-name {
     display: flex;
@@ -83,7 +84,7 @@ h2{
     padding: 5px;
     margin: 5px 5px;
     border: 1px solid white;
-    /*background-color: gray;*/
+
 
 }
 
