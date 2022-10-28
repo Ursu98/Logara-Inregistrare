@@ -27,12 +27,14 @@ btn_sign_up.addEventListener("click", () => {
     const numberField = numberValidation();
     const fullnameField = fullnameValidation();
     const emailField = emailValidation();
+    const passField = passwordValidation();
     const get_name = firstName.value
     const get_surname = lastName.value
     const get_mail = email.value
     const get_pass = pass.value
     const get_phone = phone_number.value
-    if(numberField === true && emailField === true && fullnameField === true){
+
+    if(numberField === true && emailField === true && fullnameField === true && passField === true){
         users.push({
             name: get_name,
             surname: get_surname,
@@ -110,6 +112,7 @@ const numberValidation = () => {
     }
 }
 
+
 //Function for name input
 const fullnameValidation = () => {
     const name = firstName.value;
@@ -128,3 +131,22 @@ const fullnameValidation = () => {
         return true
     }
 }
+
+const passwordValidation = () => {
+    const password = pass.value;
+    if (password.length < 8) {
+        alert("Error: Password must be at least 8 characters");
+        return false;
+    } else if (password.search(/[a-z]/) < 0) {
+        alert("Error:Password must contain at least one lowercase letter");
+        return false;
+    } else if (password.search(/[A-Z]/) < 0) {
+        alert("Error:Password must contain at least one upercase letter");
+        return false;
+    } else if (password.search(/[0-9]/) < 0) {
+        alert("Error: Password must contain at least one number");
+        return false;
+    }
+    return true;
+}
+
