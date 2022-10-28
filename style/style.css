@@ -51,6 +51,7 @@ h2{
 
 
 #login{
+    display: block;
     width: 50%;
     text-transform: uppercase;
     font-size: 20px;
@@ -67,10 +68,10 @@ h2{
     display: flex;
     align-items: flex-end;
 }
-.btn-top:focus, .btn-top:active, .btn-top.active, .btn-top:active:focus {
-    outline: 0;
-    border-radius: 0
-}
+/*.btn-top:focus, .btn-top:active, .btn-top.active, .btn-top:active:focus {*/
+/*    outline: 0;*/
+/*    border-radius: 0*/
+/*}*/
 
 .first-name {
     display: flex;
@@ -91,23 +92,22 @@ h2{
     padding: 5px;
     margin-top: 25px;
     border: 1px solid white;
-    background-color: gray;
-    color: white;
+    color: black;
 }
 
 
 #btn-sign-up{
-    margin-top: 75px;
+    margin-top: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 98%;
     height: 10%;
 }
 
 .sign-up-btn{
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     text-transform: uppercase;
     font-size: 20px;
     color: #F7CA18;
@@ -122,6 +122,19 @@ h2{
     color: black;
 }
 
-.log-in{
-    display: none;
+.btn-log-in{
+   margin-top: 45px;
+    width: 98%;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #F7CA18;
+    background-color: transparent;
+    border: 1px solid yellow;
+    transition: .5s;
+}
+
+.btn-log-in:hover {
+    background-color: yellow;
+    color: black;
 }
